@@ -47,6 +47,7 @@
 		5333ABA31EB0BD22008BA8F7 /* NSObject+HS_Coding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HS_Coding.m"; sourceTree = "<group>"; };
 		5333ABAA1EB0BE5F008BA8F7 /* device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = device.h; sourceTree = "<group>"; };
 		5333ABAB1EB0BE5F008BA8F7 /* device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = device.m; sourceTree = "<group>"; };
+		5333ABAD1EB0C6BE008BA8F7 /* DTDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTDBModel.h; sourceTree = "<group>"; };
 		85D4AB8386DAFA5FF3BAB2AA /* libPods-DTDBModel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DTDBModel.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F293CD9BD5D4ED19EC1C3F0D /* Pods-DTDBModel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DTDBModel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DTDBModel/Pods-DTDBModel.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,6 +130,7 @@
 				5333ABA11EB0BD22008BA8F7 /* NSObject+DTS_Model.m */,
 				5333ABA21EB0BD22008BA8F7 /* NSObject+HS_Coding.h */,
 				5333ABA31EB0BD22008BA8F7 /* NSObject+HS_Coding.m */,
+				5333ABAD1EB0C6BE008BA8F7 /* DTDBModel.h */,
 			);
 			path = DTDBModel;
 			sourceTree = "<group>";
