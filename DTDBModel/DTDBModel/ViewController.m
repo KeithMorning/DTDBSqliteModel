@@ -51,7 +51,7 @@
     
     DTSSQLBuilder *builder = [DTSSQLBuilder makeBuilder:^(DTSSQLBuilder *builder) {
         
-        builder.Select.Table([device tableName]).Where.field(@"num").Less(@3);
+        builder.Select.Table([device tableName]).Where.field(@"num").Less(@3).And.field(@"date").Equal([NSDate date]);
     }];
     
     NSString *sql = [builder buildSql];

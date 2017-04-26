@@ -83,7 +83,8 @@
     if ([type isEqualToString:@"Int".lowercaseString]
         ||[type isEqualToString:@"NSInteger".lowercaseString]
         ||[type isEqualToString:@"bool"]
-        ||[type isEqualToString:@"long"]) {
+        ||[type isEqualToString:@"long"]
+        ||[type isEqualToString:@"NSDate".lowercaseString]) {
         return @"Integer";
     }
     
@@ -94,7 +95,7 @@
     }
     
     if ([type isEqualToString:@"NSString".lowercaseString]
-        ||[type isEqualToString:@"NSDate".lowercaseString]) {
+        ) {
         return @"Text";
     }
     

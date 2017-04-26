@@ -18,6 +18,7 @@
 
 
 #import "DTSSQLBuilder.h"
+#import "DTDateformer.h"
 
 typedef NS_ENUM(NSUInteger, DTSQLOperation) {
     DTSQLSelect,
@@ -132,6 +133,7 @@ typedef NS_ENUM(NSUInteger, DTSQLOperation) {
     
     return ^DTSSQLBuilder*(id value){
     
+        value = [DTSSQLBuilder convertInfNeed:value];
         [self.values addObject:value];
         [self.sql appendFormat:@" ? "];
         return self;
@@ -188,6 +190,7 @@ typedef NS_ENUM(NSUInteger, DTSQLOperation) {
     
     return ^DTSSQLBuilder*(id value){
     
+        value = [DTSSQLBuilder convertInfNeed:value];
         [self.sql appendFormat:@" = ? "];
         [self.values addObject:value];
         return self;
@@ -199,6 +202,7 @@ typedef NS_ENUM(NSUInteger, DTSQLOperation) {
 
     return ^DTSSQLBuilder*(id value){
         
+        value = [DTSSQLBuilder convertInfNeed:value];
         [self.sql appendFormat:@" < ?"];
         [self.values addObject:value];
         return self;
@@ -209,6 +213,7 @@ typedef NS_ENUM(NSUInteger, DTSQLOperation) {
     
     return ^DTSSQLBuilder*(id value){
         
+        value = [DTSSQLBuilder convertInfNeed:value];
         [self.sql appendFormat:@" <= ?"];
         [self.values addObject:value];
         return self;
@@ -220,6 +225,7 @@ typedef NS_ENUM(NSUInteger, DTSQLOperation) {
     
     return ^DTSSQLBuilder*(id value){
         
+        value = [DTSSQLBuilder convertInfNeed:value];
         [self.sql appendFormat:@" > ?"];
         [self.values addObject:value];
         return self;
@@ -231,6 +237,7 @@ typedef NS_ENUM(NSUInteger, DTSQLOperation) {
     
     return ^DTSSQLBuilder*(id value){
         
+        value = [DTSSQLBuilder convertInfNeed:value];
         [self.sql appendFormat:@" >= ?"];
         [self.values addObject:value];
         return self;
@@ -242,10 +249,23 @@ typedef NS_ENUM(NSUInteger, DTSQLOperation) {
 
     return ^DTSSQLBuilder*(id value){
         
+        value = [DTSSQLBuilder convertInfNeed:value];
         [self.sql appendFormat:@" like ?"];
         [self.values addObject:value];
         return self;
     };
+}
+
++ (id)convertInfNeed:(id)value{
+    
+    if ([value isKindOfClass:[NSDate class]]) {
+        
+        NSTimeInterval timeInterval = [DTDateformer timeIntervalFromDate:value];
+        return @(timeInterval);
+        
+    }else{
+        return value;
+    }
 }
 
 

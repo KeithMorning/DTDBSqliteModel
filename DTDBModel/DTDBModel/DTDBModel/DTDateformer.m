@@ -35,4 +35,16 @@
     return former;
 }
 
++ (NSTimeInterval)timeIntervalFromDate:(NSDate *)date{
+    
+    NSTimeInterval interval = [date timeIntervalSince1970];
+    return interval;
+}
+
++ (NSDate *)dateFromInterval:(NSTimeInterval)timeInterval{
+    
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:timeInterval];
+    return date;
+}
+
 @end

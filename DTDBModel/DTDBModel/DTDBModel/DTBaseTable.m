@@ -300,8 +300,8 @@
         }else{
             if ([obj.objType.lowercaseString isEqualToString:@"NSDate".lowercaseString]) {
                 
-                NSString *stringdate = value;
-                NSDate *date = [DTDateformer dateFromString:stringdate];
+                NSTimeInterval time = [value doubleValue];
+                NSDate *date = [DTDateformer dateFromInterval:time];
                 [result setObject:date forKey:classkey];
             }else{
                  [result setObject:value forKey:classkey];
@@ -341,8 +341,8 @@
             
         }else if ([resultValue isKindOfClass:[NSDate class]]){
 
-            NSString *datestr = [DTDateformer stringFromDate:resultValue];
-            [allvalues addObject:datestr];
+            NSTimeInterval timeInterval = [DTDateformer timeIntervalFromDate:resultValue];
+            [allvalues addObject:@(timeInterval)];
         
         }else{
             [allvalues addObject:resultValue];

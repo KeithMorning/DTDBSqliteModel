@@ -13,4 +13,8 @@
 + (NSString *)stringFromDate:(NSDate *)date;
 + (NSDate *)dateFromString:(NSString *)datestr;
 
++ (NSTimeInterval)timeIntervalFromDate:(NSDate *)date;
+
++ (NSDate *)dateFromInterval:(NSTimeInterval)timeInterval;
+
 @end
